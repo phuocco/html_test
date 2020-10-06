@@ -106,11 +106,46 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            YoutubePlayer(
-              controller: _controller,
-              showVideoProgressIndicator: true,
-              onReady: () {
-                _controller.addListener(listener);
+            YoutubePlayerBuilder(
+              player: YoutubePlayer(
+                controller: _controller,
+                showVideoProgressIndicator: true,
+                topActions: <Widget>[
+                  const SizedBox(width: 8.0),
+                  Expanded(
+                    child: Text(
+                      _controller.metadata.title,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.settings,
+                      color: Colors.white,
+                      size: 25.0,
+                    ),
+                    onPressed: () {
+                      print("settings");
+                    },
+                  ),
+                ],
+                onReady: () {
+                  _controller.addListener(listener);
+                },
+              ),
+              builder: (context, player) {
+                return Column(
+                  children: [
+                    Text("data"),
+                    player,
+                    Text("data2"),
+                  ],
+                );
               },
             ),
             Html(

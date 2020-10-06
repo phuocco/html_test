@@ -37,6 +37,8 @@ Map<String, Style> style = {
 //            "h1": Style(
 //              textAlign: TextAlign.center,
 //            ),
+  "h1": Style(fontSize: FontSize.xxLarge),
+
   "table": Style(
     backgroundColor: Color.fromARGB(0x50, 0xee, 0xee, 0xee),
   ),
