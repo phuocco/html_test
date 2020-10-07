@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _controller = YoutubePlayerController(
-      initialVideoId: 'oeT4Z-C4Ux0',
+      initialVideoId: 'rVz5f-b_NKs',
       params: const YoutubePlayerParams(
         showControls: true,
         showFullscreenButton: true,
@@ -94,6 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Html(
               data: htmlData,
               style: style,
+            ),
+            YoutubePlayerIFrame(
+              controller: _controller,
+              aspectRatio: 16 / 9,
             ),
           ],
         ),

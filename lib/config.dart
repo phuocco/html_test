@@ -4,6 +4,8 @@ import 'package:flutter_html/style.dart';
 const htmlData = """
 <h1>Header 1</h1>
 <h2>Header 2</h2>
+<b> text bold </b>
+<p> aasdasd </p
   <ol>
             <li>This</li>
             <li><p>is</p></li>
@@ -27,7 +29,7 @@ const htmlData = """
             <li><h2>Header 2</h2></li>
             <h2><li>Header 2</li></h2>
       </ol>
-        <img alt='Google' src='https://mcpeaddons.com/wp-content/uploads/2020/04/new-mutant-creatures-addon_02.png' />
+        <img alt='Google' height='100' width='50' src='https://mcpeaddons.com/wp-content/uploads/2020/04/new-mutant-creatures-addon_02.png' />
 """;
 Map<String, Style> style = {
   "html": Style(
@@ -38,6 +40,10 @@ Map<String, Style> style = {
 //              textAlign: TextAlign.center,
 //            ),
   "h1": Style(fontSize: FontSize.xxLarge),
+  "b": Style(
+    fontSize: FontSize.medium,
+    fontWeight: FontWeight.w900,
+  ),
 
   "table": Style(
     backgroundColor: Color.fromARGB(0x50, 0xee, 0xee, 0xee),
@@ -53,4 +59,5 @@ Map<String, Style> style = {
     padding: EdgeInsets.all(6),
   ),
   "var": Style(fontFamily: 'serif'),
+  "img": Style(width: 300),
 };
